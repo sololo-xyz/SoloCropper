@@ -1,8 +1,6 @@
 # SoloCropper
 
-SoloCropper is one of the Solo tools from [sololo.xyz](https://sololo.xyz), built on Ultralytics segmentation and pose models.
-
-Designed for human images, it supports batch cropping and can generate outputs in multiple sizes from multiple images at once.
+SoloCropper is an AI-driven image processing utility designed for precise human-centric cropping. Built on Ultralytics pose and segmentation frameworks, it supports high-volume batch processing and generates multiple aspect ratios and sizes in a single pass.
 
 It supports various input and output formats and is currently available as a command-line tool only.
 
