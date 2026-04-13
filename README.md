@@ -14,13 +14,13 @@ SoloCropper is part of the Solo series by sololo.xyz. Currently available as a C
 
 
 
-## Requirements
+## 📋 Requirements
 
 - Python `3.11+`
 - Windows, Linux, or macOS
 - PyTorch
 
-## Model Downloads
+## 📥 Model Downloads
 
 Download the following model files and place them in `models/yolo/`:
 
@@ -41,7 +41,7 @@ Hugging Face:
 
 Other YOLO segmentation and pose models are also supported. Update `config.toml` if you use different files.
 
-## Installation
+## ⚙️ Installation
 
 - Clone this repository.
 
@@ -96,7 +96,7 @@ Other YOLO segmentation and pose models are also supported. Update `config.toml`
 
   
 
-## Usage
+## ▶️ Usage
 
 ### Windows
 
@@ -113,7 +113,7 @@ chmod +x run.sh
 
 
 
-## Configuration
+## 🔧 Configuration
 
 Edit `config.toml` to change device, models, paths, thresholds, box settings, and output behavior.
 
