@@ -1,10 +1,16 @@
 # SoloCropper
 
-SoloCropper is an AI-driven image processing utility designed for precise human-centric cropping. Built on Ultralytics pose and segmentation frameworks, it supports high-volume batch processing and generates multiple aspect ratios and sizes in a single pass.
+**SoloCropper** is a high-efficiency **human** image **cropping tool** tailored for **dataset preparation**. It automates the generation of multi-spec outputs from multiple images, allowing users to crop various body segments and sizes in a single pass based on custom parameters.
 
-It supports various input and output formats and is currently available as a command-line tool only.
+## 🚀 Key Features
+- Fast & Accurate Detection: Powered by high-efficiency Ultralytics YOLO models, SoloCropper delivers rapid human recognition even on standard CPUs.
+- Flexible multi-output cropping: Generate multiple candidate crops at once to streamline your dataset selection process.
+- Flexible Image Handling: Comprehensive support for multiple input/output formats and adjustable compression quality for precise output control.
 
-For more LoRAs and articles, visit [**sololo.xyz**](https://sololo.xyz)
+## 🛠️ Project Status
+SoloCropper is part of the Solo series by sololo.xyz. Currently available as a CLI-only version.
+
+**Explore more and download hundreds of free Solo LoRAs at: https://sololo.xyz**
 
 
 
