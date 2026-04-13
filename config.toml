@@ -1,0 +1,142 @@
+# ====================================================
+# 1. Operation Modes
+# ====================================================
+device = "auto"                          # "cpu", "cuda:0", "auto"
+box_mode = true                          # Save annotated preview images
+crop_mode = true                         # Save crop outputs
+
+# ====================================================
+# 2. Paths & Models
+# ====================================================
+[paths]
+input_dir = "input"
+output_dir = "output"
+clear_output_dir_on_start = false
+size_fix_log_filename = "size_fix_log.txt"
+flagged_crop_subdir = "_flagged"
+
+[models]
+segmentation = "models/yolo/yolo26x-seg.pt"
+pose = "models/yolo/yolo26x-pose.pt"
+
+# ====================================================
+# 3. Save Performance
+# ====================================================
+[save]
+output_format = "png"                    # "jpg", "jpeg", "png", "bmp", "webp"
+png_compress_level = 6                   # 0-9, lower is faster
+jpeg_quality = 90                        # 1-100
+webp_quality = 90                        # 1-100
+webp_method = 0                          # 0-6, lower is faster
+
+# ====================================================
+# 4. Crop Logic
+# ====================================================
+[crop_logic]
+size_expand_threshold_percent = 20       # Max percent allowed for size-based box expansion
+upscale_small_outputs = false            # Upscale outputs smaller than the target size
+
+[aspect_ratio_overflow]
+auto_crop_max_loss_percent = 20          # Used only when overflow_mode = "auto"
+
+# ====================================================
+# 5. Detection Thresholds
+# ====================================================
+[thresholds]
+segmentation = 0.45                      # Main segmentation confidence
+segmentation_fallback = 0.25             # Fallback segmentation confidence
+pose = 0.45                              # Pose confidence
+keypoint = 0.20                          # Keypoint confidence
+
+# ====================================================
+# 6. Box Rules
+# ====================================================
+# overflow_mode:
+#   "crop" = keep the corrected box inside the image
+#   "pad"  = allow overflow and fill outside area with white padding
+#   "auto" = crop inward only when the trim loss is small enough
+#
+# aspect_ratio_fix:
+#   ["0"]         = keep original ratio
+#   ["2:3"]       = fix ratio only
+#   ["512,768"]   = fix ratio and target output size
+
+[box_settings.full]
+enabled = true
+expand = 80
+overflow_mode = "auto"
+aspect_ratio_fix = ["0"]
+
+[box_settings.shoulder]
+enabled = true
+expand = 30
+overflow_mode = "auto"
+aspect_ratio_fix = ["0"]
+
+[box_settings.shoulder_only]
+enabled = true
+expand = 30
+overflow_mode = "auto"
+aspect_ratio_fix = ["0"]
+
+[box_settings.waist]
+enabled = true
+expand = 30
+overflow_mode = "auto"
+aspect_ratio_fix = ["0"]
+
+[box_settings.hip]
+enabled = true
+expand = 30
+overflow_mode = "auto"
+aspect_ratio_fix = ["0"]
+
+[box_settings.glute]
+enabled = true
+expand = 30
+overflow_mode = "auto"
+aspect_ratio_fix = ["0"]
+
+[box_settings.knee]
+enabled = true
+expand = 30
+overflow_mode = "auto"
+aspect_ratio_fix = ["0"]
+
+[box_settings.ankle]
+enabled = true
+expand = 30
+overflow_mode = "auto"
+aspect_ratio_fix = ["0"]
+
+# ====================================================
+# 7. Annotation Visuals
+# ====================================================
+[annotation]
+main_box_color = [255, 255, 0, 255]
+line_width = 5
+line_box_width = 4
+label_bg_color = [0, 0, 0, 180]
+label_font_size = 28
+label_padding_x = 8
+label_padding_y = 4
+label_gap = 10
+
+font_candidates = [
+  "C:/Windows/Fonts/msyh.ttc",
+  "C:/Windows/Fonts/msyhbd.ttc",
+  "C:/Windows/Fonts/simhei.ttf",
+  "C:/Windows/Fonts/arial.ttf",
+  "C:/Windows/Fonts/arialbd.ttf",
+  "arial.ttf",
+  "DejaVuSans.ttf",
+]
+
+[annotation.region_colors]
+shoulder = [255, 99, 71, 255]
+shoulder_only = [255, 20, 147, 255]
+waist = [50, 205, 50, 255]
+hip = [30, 144, 255, 255]
+glute = [255, 140, 0, 255]
+knee = [186, 85, 211, 255]
+ankle = [0, 206, 209, 255]
