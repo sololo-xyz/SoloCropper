@@ -2,13 +2,6 @@
 
 This document explains what each setting in `config.toml` does. The configuration is organized into 7 core modules.
 
-The current recommended keys are `[save].output_format` and `[crop_logic]`. Older configs are still compatible with:
-
-- top-level `output_format`
-- top-level `size_expand_threshold_percent`
-- top-level `upscale_small_outputs`
-- legacy `[box_rules]`
-
 ## 1. Operation Modes
 
 Controls the most basic runtime behavior.
